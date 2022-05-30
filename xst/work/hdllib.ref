@@ -1,0 +1,14 @@
+MO Mux_branch NULL Mux_branch.v vlg33/_mux__branch.bin 1653923608
+MO Control_Unit NULL Control_Unit.v vlg24/_control___unit.bin 1653923608
+MO hex7Segment NULL hex7Segment.v vlg1F/hex7_segment.bin 1653923608
+MO Register NULL Register.v vlg09/_register.bin 1653923608
+MO PC NULL PC.v vlg53/_p_c.bin 1653923608
+MO FFinal NULL final.v vlg38/_f_final.bin 1653923608
+MO IMEM NULL IMEM.v vlg50/_i_m_e_m.bin 1653923608
+MO DataMemory NULL DataMemory.v vlg2B/_data_memory.bin 1653923608
+MO Sign_Extend NULL Sign_Extend.v vlg28/_sign___extend.bin 1653923608
+MO Mux_MemtoReg NULL Mux_MemtoReg.v vlg0D/_mux___memto_reg.bin 1653923608
+MO microprocessor NULL microprocessor.v vlg42/microprocessor.bin 1653923608
+MO Mux_ALUSrc NULL Mux_ALUSrc.v vlg5F/_mux___a_l_u_src.bin 1653923608
+MO ALU NULL ALU.v vlg2A/_a_l_u.bin 1653923608
+MO Mux_RegDst NULL Mux_RegDst.v vlg56/_mux___reg_dst.bin 1653923608
