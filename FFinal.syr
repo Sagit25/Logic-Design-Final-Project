@@ -1,0 +1,930 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.18 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.18 secs
+ 
+--> Reading design: FFinal.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "FFinal.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "FFinal"
+Output Format                      : NGC
+Target Device                      : xc3s50an-4-tqg144
+
+---- Source Options
+Top Module Name                    : FFinal
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "../../microprocessor/Sign_Extend.v" in library work
+Compiling verilog file "../../microprocessor/Mux_RegDst.v" in library work
+Module <Sign_Extend> compiled
+Compiling verilog file "../../microprocessor/Mux_MemtoReg.v" in library work
+Module <Mux_RegDst> compiled
+Compiling verilog file "../../microprocessor/Mux_branch.v" in library work
+Module <Mux_MemtoReg> compiled
+Compiling verilog file "../../microprocessor/Mux_ALUSrc.v" in library work
+Module <Mux_branch> compiled
+Compiling verilog file "../../micropro/microprocessor/PC.v" in library work
+Module <Mux_ALUSrc> compiled
+Compiling verilog file "../../micropro/microprocessor/hex7Segment.v" in library work
+Module <PC> compiled
+Compiling verilog file "../../micropro/microprocessor/DataMemory.v" in library work
+Module <hex7Segment> compiled
+Compiling verilog file "../../Logic-Design-Final-Project-master/Register.v" in library work
+Module <DataMemory> compiled
+Compiling verilog file "../../Logic-Design-Final-Project-master/Control_Unit.v" in library work
+Module <Register> compiled
+Compiling verilog file "../../Logic-Design-Final-Project-master/ALU.v" in library work
+Module <Control_Unit> compiled
+Compiling verilog file "../../micropro/microprocessor/microprocessor.v" in library work
+Module <ALU> compiled
+Compiling verilog file "IMEM.v" in library work
+Module <microprocessor> compiled
+Compiling verilog file "final.v" in library work
+Module <IMEM> compiled
+Module <FFinal> compiled
+No errors in compilation
+Analysis of file <"FFinal.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <FFinal> in library <work>.
+
+Analyzing hierarchy for module <IMEM> in library <work>.
+
+Analyzing hierarchy for module <microprocessor> in library <work>.
+
+Analyzing hierarchy for module <Sign_Extend> in library <work>.
+
+Analyzing hierarchy for module <Mux_ALUSrc> in library <work>.
+
+Analyzing hierarchy for module <Mux_MemtoReg> in library <work>.
+
+Analyzing hierarchy for module <DataMemory> in library <work>.
+
+Analyzing hierarchy for module <Mux_RegDst> in library <work>.
+
+Analyzing hierarchy for module <ALU> in library <work>.
+
+Analyzing hierarchy for module <Mux_branch> in library <work>.
+
+Analyzing hierarchy for module <PC> in library <work>.
+
+Analyzing hierarchy for module <Register> in library <work>.
+
+Analyzing hierarchy for module <hex7Segment> in library <work>.
+
+Analyzing hierarchy for module <Control_Unit> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <FFinal>.
+Module <FFinal> is correct for synthesis.
+ 
+Analyzing module <IMEM> in library <work>.
+INFO:Xst:1433 - Contents of array <MemByte> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+Module <IMEM> is correct for synthesis.
+ 
+Analyzing module <microprocessor> in library <work>.
+Module <microprocessor> is correct for synthesis.
+ 
+Analyzing module <Sign_Extend> in library <work>.
+Module <Sign_Extend> is correct for synthesis.
+ 
+Analyzing module <Mux_ALUSrc> in library <work>.
+Module <Mux_ALUSrc> is correct for synthesis.
+ 
+Analyzing module <Mux_MemtoReg> in library <work>.
+Module <Mux_MemtoReg> is correct for synthesis.
+ 
+Analyzing module <DataMemory> in library <work>.
+Module <DataMemory> is correct for synthesis.
+ 
+Analyzing module <Mux_RegDst> in library <work>.
+Module <Mux_RegDst> is correct for synthesis.
+ 
+Analyzing module <ALU> in library <work>.
+Module <ALU> is correct for synthesis.
+ 
+Analyzing module <Mux_branch> in library <work>.
+Module <Mux_branch> is correct for synthesis.
+ 
+Analyzing module <PC> in library <work>.
+Module <PC> is correct for synthesis.
+ 
+Analyzing module <Register> in library <work>.
+Module <Register> is correct for synthesis.
+ 
+Analyzing module <hex7Segment> in library <work>.
+Module <hex7Segment> is correct for synthesis.
+ 
+Analyzing module <Control_Unit> in library <work>.
+Module <Control_Unit> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <IMEM>.
+    Related source file is "IMEM.v".
+WARNING:Xst:647 - Input <Read_Address<7:5>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:653 - Signal <MemByte<31:5>> is used but never assigned. This sourceless signal will be automatically connected to value 00000000.
+    Found 32x8-bit ROM for signal <instruction>.
+    Summary:
+	inferred   1 ROM(s).
+Unit <IMEM> synthesized.
+
+
+Synthesizing Unit <Sign_Extend>.
+    Related source file is "../../microprocessor/Sign_Extend.v".
+    Register <signExtended<2>> equivalent to <signExtended<1>> has been removed
+    Register <signExtended<3>> equivalent to <signExtended<1>> has been removed
+    Register <signExtended<4>> equivalent to <signExtended<1>> has been removed
+    Register <signExtended<5>> equivalent to <signExtended<1>> has been removed
+    Register <signExtended<6>> equivalent to <signExtended<1>> has been removed
+    Register <signExtended<7>> equivalent to <signExtended<1>> has been removed
+    Found 2-bit register for signal <signExtended<1:0>>.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+Unit <Sign_Extend> synthesized.
+
+
+Synthesizing Unit <Mux_ALUSrc>.
+    Related source file is "../../microprocessor/Mux_ALUSrc.v".
+    Found 8-bit register for signal <address>.
+    Summary:
+	inferred   8 D-type flip-flop(s).
+Unit <Mux_ALUSrc> synthesized.
+
+
+Synthesizing Unit <Mux_MemtoReg>.
+    Related source file is "../../microprocessor/Mux_MemtoReg.v".
+    Found 8-bit register for signal <WriteData>.
+    Summary:
+	inferred   8 D-type flip-flop(s).
+Unit <Mux_MemtoReg> synthesized.
+
+
+Synthesizing Unit <DataMemory>.
+    Related source file is "../../micropro/microprocessor/DataMemory.v".
+WARNING:Xst:647 - Input <memAddress<7:5>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 8-bit register for signal <memReadData>.
+    Found 256-bit register for signal <memory>.
+INFO:Xst:738 - HDL ADVISOR - 256 flip-flops were inferred for signal <memory>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+    Summary:
+	inferred 264 D-type flip-flop(s).
+	inferred   8 Multiplexer(s).
+Unit <DataMemory> synthesized.
+
+
+Synthesizing Unit <Mux_RegDst>.
+    Related source file is "../../microprocessor/Mux_RegDst.v".
+    Found 2-bit register for signal <writeRegister>.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+Unit <Mux_RegDst> synthesized.
+
+
+Synthesizing Unit <ALU>.
+    Related source file is "../../Logic-Design-Final-Project-master/ALU.v".
+WARNING:Xst:646 - Signal <out<8>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 9-bit register for signal <out>.
+    Found 8-bit adder carry out for signal <out$addsub0000> created at line 34.
+    Summary:
+	inferred   9 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <ALU> synthesized.
+
+
+Synthesizing Unit <Mux_branch>.
+    Related source file is "../../microprocessor/Mux_branch.v".
+    Found 8-bit register for signal <programCounter>.
+    Summary:
+	inferred   8 D-type flip-flop(s).
+Unit <Mux_branch> synthesized.
+
+
+Synthesizing Unit <PC>.
+    Related source file is "../../micropro/microprocessor/PC.v".
+    Found 8-bit register for signal <out>.
+    Summary:
+	inferred   8 D-type flip-flop(s).
+Unit <PC> synthesized.
+
+
+Synthesizing Unit <Register>.
+    Related source file is "../../Logic-Design-Final-Project-master/Register.v".
+    Found 8-bit register for signal <out>.
+    Found 8-bit register for signal <read1>.
+    Found 8-bit 4-to-1 multiplexer for signal <read1$mux0000> created at line 58.
+    Found 8-bit register for signal <read2>.
+    Found 8-bit 4-to-1 multiplexer for signal <read2$mux0000> created at line 64.
+    Found 8-bit register for signal <reg1>.
+    Found 8-bit register for signal <reg2>.
+    Found 8-bit register for signal <reg3>.
+    Found 8-bit register for signal <reg4>.
+    Summary:
+	inferred  56 D-type flip-flop(s).
+	inferred  16 Multiplexer(s).
+Unit <Register> synthesized.
+
+
+Synthesizing Unit <hex7Segment>.
+    Related source file is "../../micropro/microprocessor/hex7Segment.v".
+    Found 16x7-bit ROM for signal <out2>.
+    Found 16x7-bit ROM for signal <out1>.
+    Summary:
+	inferred   2 ROM(s).
+Unit <hex7Segment> synthesized.
+
+
+Synthesizing Unit <Control_Unit>.
+    Related source file is "../../Logic-Design-Final-Project-master/Control_Unit.v".
+    Found 4x8-bit ROM for signal <out$mux0000> created at line 40.
+    Found 8-bit register for signal <out>.
+    Summary:
+	inferred   1 ROM(s).
+	inferred   8 D-type flip-flop(s).
+Unit <Control_Unit> synthesized.
+
+
+Synthesizing Unit <microprocessor>.
+    Related source file is "../../micropro/microprocessor/microprocessor.v".
+    Found 8-bit adder for signal <branchedCount>.
+    Found 8-bit adder for signal <normalCount>.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+Unit <microprocessor> synthesized.
+
+
+Synthesizing Unit <FFinal>.
+    Related source file is "final.v".
+Unit <FFinal> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 4
+ 16x7-bit ROM                                          : 2
+ 32x8-bit ROM                                          : 1
+ 4x8-bit ROM                                           : 1
+# Adders/Subtractors                                   : 3
+ 8-bit adder                                           : 2
+ 8-bit adder carry out                                 : 1
+# Registers                                            : 49
+ 1-bit register                                        : 2
+ 2-bit register                                        : 1
+ 8-bit register                                        : 45
+ 9-bit register                                        : 1
+# Multiplexers                                         : 3
+ 8-bit 32-to-1 multiplexer                             : 1
+ 8-bit 4-to-1 multiplexer                              : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1710 - FF/Latch <reg4_7> (without init value) has a constant value of 0 in block <T9>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <reg4_6> (without init value) has a constant value of 0 in block <T9>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <reg4_5> (without init value) has a constant value of 0 in block <T9>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <reg4_4> (without init value) has a constant value of 0 in block <T9>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <reg4_3> (without init value) has a constant value of 0 in block <T9>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <reg4_2> (without init value) has a constant value of 0 in block <T9>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <reg4_1> (without init value) has a constant value of 0 in block <T9>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <reg4_0> (without init value) has a constant value of 0 in block <T9>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <reg3_7> (without init value) has a constant value of 0 in block <T9>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <reg3_6> (without init value) has a constant value of 0 in block <T9>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <reg3_5> (without init value) has a constant value of 0 in block <T9>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <reg3_4> (without init value) has a constant value of 0 in block <T9>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <reg3_3> (without init value) has a constant value of 0 in block <T9>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <reg3_2> (without init value) has a constant value of 0 in block <T9>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <reg3_1> (without init value) has a constant value of 0 in block <T9>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <reg3_0> (without init value) has a constant value of 0 in block <T9>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <writeRegister_1> (without init value) has a constant value of 0 in block <T5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <signExtended_1> (without init value) has a constant value of 0 in block <T1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <out_8> of sequential type is unconnected in block <T6>.
+
+Synthesizing (advanced) Unit <Control_Unit>.
+INFO:Xst:3034 - In order to maximize performance and save block RAM resources, the small ROM <Mrom_out_mux0000> will be implemented on LUT. If you want to force its implementation on block, use option/constraint rom_style.
+Unit <Control_Unit> synthesized (advanced).
+WARNING:Xst:2677 - Node <out_8> of sequential type is unconnected in block <ALU>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 4
+ 16x7-bit ROM                                          : 2
+ 32x8-bit ROM                                          : 1
+ 4x8-bit ROM                                           : 1
+# Adders/Subtractors                                   : 3
+ 8-bit adder                                           : 2
+ 8-bit adder carry out                                 : 1
+# Registers                                            : 372
+ Flip-Flops                                            : 372
+# Multiplexers                                         : 17
+ 1-bit 4-to-1 multiplexer                              : 16
+ 8-bit 32-to-1 multiplexer                             : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <T1/signExtended_1> (without init value) has a constant value of 0 in block <microprocessor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T5/writeRegister_1> (without init value) has a constant value of 0 in block <microprocessor>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <out_0> in Unit <Control_Unit> is equivalent to the following FF/Latch, which will be removed : <out_7> 
+INFO:Xst:2261 - The FF/Latch <out_1> in Unit <Control_Unit> is equivalent to the following FF/Latch, which will be removed : <out_3> 
+
+Optimizing unit <FFinal> ...
+
+Optimizing unit <Mux_ALUSrc> ...
+
+Optimizing unit <Mux_MemtoReg> ...
+
+Optimizing unit <DataMemory> ...
+
+Optimizing unit <ALU> ...
+
+Optimizing unit <Mux_branch> ...
+
+Optimizing unit <PC> ...
+
+Optimizing unit <Register> ...
+
+Optimizing unit <Control_Unit> ...
+
+Optimizing unit <microprocessor> ...
+WARNING:Xst:1710 - FF/Latch <T2/T4/memory_20_7> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_20_6> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_20_5> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_20_4> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_20_3> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_20_2> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_20_1> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_20_0> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_18_7> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_18_6> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_18_5> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_18_4> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_18_3> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_18_2> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_18_1> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_18_0> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_17_7> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_17_6> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_17_5> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_23_3> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_23_2> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_23_1> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_23_0> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_22_7> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_22_6> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_22_5> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_22_4> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_22_3> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_22_2> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_22_1> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_22_0> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_21_7> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_21_6> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_21_5> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_21_4> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_21_3> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_21_2> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_21_1> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_21_0> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_16_0> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_15_7> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_15_6> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_15_5> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_15_4> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_15_3> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_15_2> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_15_1> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_15_0> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_14_7> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_14_6> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_14_5> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_14_4> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_14_3> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_14_2> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_14_1> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_14_0> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_13_7> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_13_6> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_17_4> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_17_3> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_17_2> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_17_1> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_17_0> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_19_7> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_19_6> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_19_5> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_19_4> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_19_3> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_19_2> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_19_1> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_19_0> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_16_7> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_16_6> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_16_5> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_16_4> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_16_3> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_16_2> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_16_1> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_30_6> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_30_5> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_30_4> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_30_3> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_30_2> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_30_1> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_30_0> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_29_7> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_29_6> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_29_5> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_29_4> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_29_3> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_29_2> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_29_1> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_29_0> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_28_7> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_28_6> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_28_5> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_28_4> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T1/signExtended_0> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T5/writeRegister_0> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T2/address_7> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T2/address_6> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T2/address_5> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T2/address_4> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T2/address_3> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T2/address_2> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T2/address_1> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T2/address_0> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T3/WriteData_7> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_31_7> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_31_6> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_31_5> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_31_4> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_31_3> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_31_2> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_31_1> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_31_0> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_30_7> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_25_7> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_25_6> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_25_5> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_25_4> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_25_3> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_25_2> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_25_1> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_25_0> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_24_7> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_24_6> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_24_5> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_24_4> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_24_3> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_24_2> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_24_1> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_24_0> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_23_7> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_23_6> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_23_5> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_23_4> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_28_3> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_28_2> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_28_1> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_28_0> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_27_7> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_27_6> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_27_5> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_27_4> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_27_3> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_27_2> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_27_1> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_27_0> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_26_7> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_26_6> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_26_5> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_26_4> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_26_3> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_26_2> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_26_1> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_26_0> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_1_4> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_1_3> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_1_2> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_1_1> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_1_0> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_0_7> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_0_6> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_0_5> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_0_4> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_0_3> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_0_2> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_0_1> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_0_0> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_2_7> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_2_6> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_2_5> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_2_4> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_4_6> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_4_5> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_4_4> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_4_3> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_4_2> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_4_1> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_4_0> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_3_7> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_3_6> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_3_5> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_3_4> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_3_3> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_3_2> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_3_1> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_3_0> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_1_7> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_1_6> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_1_5> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/reg1_4> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/reg1_3> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/reg1_2> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/reg1_1> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/reg1_0> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/reg3_7> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/reg3_6> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/reg3_5> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/reg3_4> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/reg3_3> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/reg3_2> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/reg3_1> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/reg3_0> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T11/out_6> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T11/out_5> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T11/out_2> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T11/out_1> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T11/out_0> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_2_3> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_2_2> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_2_1> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_2_0> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/read1_6> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/read1_5> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/read1_0> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/reg4_7> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/reg4_6> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/reg4_5> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/reg4_4> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/reg4_3> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/reg4_2> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/reg4_1> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/reg4_0> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/reg1_7> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/reg1_6> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/reg1_5> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_11_3> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_11_2> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_11_1> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_11_0> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_10_7> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_10_6> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_10_5> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_10_4> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_10_3> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_10_2> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_10_1> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_10_0> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_9_7> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_9_6> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_9_5> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_9_4> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_9_3> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_13_5> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_13_4> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_13_3> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_13_2> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_13_1> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_13_0> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_12_7> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_12_6> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_12_5> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_12_4> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_12_3> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_12_2> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_12_1> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_12_0> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_11_7> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_11_6> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_11_5> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_11_4> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_7_7> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_7_6> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_7_5> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_7_4> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_7_3> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_7_2> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_7_1> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_7_0> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_6_7> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_6_6> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_6_5> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_6_4> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_6_3> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_6_2> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_6_1> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_6_0> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_5_7> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_5_6> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_5_5> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_5_4> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_5_3> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_5_2> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_5_1> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_5_0> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_4_7> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_9_2> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_9_1> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_9_0> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_8_7> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_8_6> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_8_5> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_8_0> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_8_1> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_8_2> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_8_3> (without init value) has a constant value of 1 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memory_8_4> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/read2_7> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/read2_6> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/read2_5> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/read2_4> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/read2_3> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/read2_2> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memReadData_7> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memReadData_6> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memReadData_5> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memReadData_4> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memReadData_3> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memReadData_2> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memReadData_1> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T4/memReadData_0> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/read2_1> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/read2_0> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/read1_7> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/out_7> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/read1_4> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/read1_3> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/read1_2> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/read1_1> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T6/out_7> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <T2/T11/out_4> of sequential type is unconnected in block <FFinal>.
+WARNING:Xst:2677 - Node <T2/T8/out_0> of sequential type is unconnected in block <FFinal>.
+WARNING:Xst:2677 - Node <T2/T8/out_1> of sequential type is unconnected in block <FFinal>.
+WARNING:Xst:2677 - Node <T2/T8/out_2> of sequential type is unconnected in block <FFinal>.
+WARNING:Xst:2677 - Node <T2/T8/out_3> of sequential type is unconnected in block <FFinal>.
+WARNING:Xst:2677 - Node <T2/T8/out_4> of sequential type is unconnected in block <FFinal>.
+WARNING:Xst:2677 - Node <T2/T8/out_5> of sequential type is unconnected in block <FFinal>.
+WARNING:Xst:2677 - Node <T2/T8/out_6> of sequential type is unconnected in block <FFinal>.
+WARNING:Xst:2677 - Node <T2/T8/out_7> of sequential type is unconnected in block <FFinal>.
+WARNING:Xst:2677 - Node <T2/T7/programCounter_0> of sequential type is unconnected in block <FFinal>.
+WARNING:Xst:2677 - Node <T2/T7/programCounter_1> of sequential type is unconnected in block <FFinal>.
+WARNING:Xst:2677 - Node <T2/T7/programCounter_2> of sequential type is unconnected in block <FFinal>.
+WARNING:Xst:2677 - Node <T2/T7/programCounter_3> of sequential type is unconnected in block <FFinal>.
+WARNING:Xst:2677 - Node <T2/T7/programCounter_4> of sequential type is unconnected in block <FFinal>.
+WARNING:Xst:2677 - Node <T2/T7/programCounter_5> of sequential type is unconnected in block <FFinal>.
+WARNING:Xst:2677 - Node <T2/T7/programCounter_6> of sequential type is unconnected in block <FFinal>.
+WARNING:Xst:2677 - Node <T2/T7/programCounter_7> of sequential type is unconnected in block <FFinal>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <T2/T9/reg2_0> is unconnected in block <FFinal>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <T2/T9/reg2_1> is unconnected in block <FFinal>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <T2/T9/reg2_2> is unconnected in block <FFinal>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <T2/T9/reg2_3> is unconnected in block <FFinal>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <T2/T9/reg2_4> is unconnected in block <FFinal>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <T2/T9/reg2_5> is unconnected in block <FFinal>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <T2/T9/reg2_6> is unconnected in block <FFinal>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <T2/T9/reg2_7> is unconnected in block <FFinal>.
+WARNING:Xst:1710 - FF/Latch <T2/T6/out_0> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T6/out_1> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T6/out_2> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T6/out_3> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T6/out_4> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T6/out_5> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T6/out_6> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T3/WriteData_6> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T3/WriteData_5> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T3/WriteData_4> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T3/WriteData_3> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T3/WriteData_2> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T3/WriteData_1> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T3/WriteData_0> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/out_6> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/out_5> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/out_4> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/out_3> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/out_2> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/out_1> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <T2/T9/out_0> (without init value) has a constant value of 0 in block <FFinal>. This FF/Latch will be trimmed during the optimization process.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block FFinal, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : FFinal.ngr
+Top Level Output File Name         : FFinal
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 16
+
+Cell Usage :
+# BELS                             : 2
+#      GND                         : 1
+#      VCC                         : 1
+# IO Buffers                       : 14
+#      OBUF                        : 14
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s50antqg144-4 
+
+ Number of Slices:                        0  out of    704     0%  
+ Number of IOs:                          16
+ Number of bonded IOBs:                  14  out of    108    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+No clock signals found in this design
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: No path found
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: No path found
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 10.00 secs
+Total CPU time to Xst completion: 10.46 secs
+ 
+--> 
+
+Total memory usage is 4513316 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  398 (   0 filtered)
+Number of infos    :    5 (   0 filtered)
+

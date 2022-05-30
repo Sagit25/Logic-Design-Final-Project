@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "C:/Users/Monday/Downloads/finalproject/final/FFinal_Test_isim_beh.exe" -prj "C:/Users/Monday/Downloads/finalproject/final/FFinal_Test_beh.prj" "work.FFinal_Test" "work.glbl" 
