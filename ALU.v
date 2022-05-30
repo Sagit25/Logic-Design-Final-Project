@@ -21,14 +21,16 @@
 module ALU(
     input [7:0] input_A,
     input [7:0] input_B,
+	 input ALUOp,
+	 input clk,
     output [7:0] output_S
     );
-	 
+
 	 reg [8:0] out;
-	 
 	 assign output_S = out[7:0];
 	 
-	 always@(input_A or input_B) begin
+	 always@(posedge clk) begin
+	 if(ALUOp)
 			out = input_A + input_B;
 	 end
 

@@ -44,7 +44,7 @@ module Register(
 	 assign output_Read_Data2 = read2;
 	 assign output_Output = out; 
 	 
-	 always@(posedge input_Reset or posedge input_Clock) begin
+	 always@(posedge input_Clock) begin
 			if(input_Reset) begin
 					reg1 <= 8'b00000000;
 					reg2 <= 8'b00000000;

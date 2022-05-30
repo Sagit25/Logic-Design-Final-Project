@@ -20,7 +20,8 @@
 //////////////////////////////////////////////////////////////////////////////////
 module Control_Unit(
     input [1:0] input_Operator,
-	 output output_Reset,
+	 //output output_Reset,
+	 input clk,
     output output_RegDst,
     output output_RegWrite,
     output output_ALUSrc,
@@ -35,15 +36,13 @@ module Control_Unit(
 	 
 	 assign {output_RegDst, output_RegWrite, output_ALUSrc, output_Branch, output_MemRead, output_MemWrite, output_MemtoReg, output_ALUOp} = out;
 	
-	 always@(input_Operator) begin
-			begin
-					case(input_Operator)
-							2'b00	:	out <= 8'b11000001;
-							2'b01	:	out <= 8'b01101010;
-							2'b10	:	out <= 8'b00100100;
-							2'b11	:	out <= 8'b00010000;
-					endcase
-			end
+	 always@(posedge clk) begin
+		case(input_Operator)
+			2'b00	:	out <= 8'b11000001;
+			2'b01	:	out <= 8'b01101010;
+			2'b10	:	out <= 8'b00100100;
+			2'b11	:	out <= 8'b00010000;
+		endcase
 	 end
 
 endmodule
