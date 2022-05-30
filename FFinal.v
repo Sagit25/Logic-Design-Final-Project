@@ -24,7 +24,8 @@ module FFinal(
     output [13:0] s
     );
 	 
-	 wire a, b;
+	 wire [7:0] a;
+	 wire [7:0] b;
 	 
 	 IMEM T1 (.instruction(a), .Read_Address(b));
 	 microprocessor T2 (.instruction(a), .clk(clk), .RST(rst), .PCoutput(b), .segDisplay(s));

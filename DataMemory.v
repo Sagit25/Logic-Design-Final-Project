@@ -38,10 +38,12 @@ module DataMemory(
 				memory[i] <= 16-i;
 			end
 		end
-		if(MemRead)
-		memReadData <= memory[memAddress];
 		if(MemWrite)
 		memory[memAddress] <= regReadDataTwo;
+		
+		if(MemRead)
+		memReadData <= memory[memAddress];
+		
 	 end
 
 endmodule

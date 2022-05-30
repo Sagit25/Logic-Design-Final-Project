@@ -54,12 +54,12 @@ module microprocessor(
 	 //Data_Memory T4(memAddress, regReadDataTwo, MemRead, MemWrite, clk, RST, memReadData);
 	 DataMemory T4(memAddress, regReadDataTwo, memReadData, MemRead, clk, RST, MemWrite);
 	 Mux_RegDst T5(RegDst, regTwo, instruction[1:0], clk, regWriteRegister);
-	 ALU T6(desAddress, regReadDataOne, ALUOp, memAddress);
+	 ALU T6(desAddress, regReadDataOne, memAddress);
 	 Mux_branch T7(Branch, branchedCount, normalCount, clk, PCInput);
 	 //Program_Counter T8(clk, PCInput, PCOutput, RST)
 	 PC T8(PCInput, clk, RST, PCOutput);
 	 Register T9(RST,clk, RegWrite,instruction[5:4],instruction[3:2], regWriteRegister, regWriteData, regReadDataOne, regReadDataTwo, output8Bit);
-	 hex7Segment T10(output8Bit, segDisplay);
+	 Hexadecimal_7Segment T10(output8Bit, segDisplay[13:7], setDisplay[6:0]);
 	 Control_Unit T11(instruction[7:6],RST,RegDst,RegWrite,ALUSrc,Branch,MemRead,MemWrite,MemtoReg,ALUOp);
 	 
 	 assign normalCount = PCOutput + 1;
