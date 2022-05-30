@@ -1,0 +1,2 @@
+verilog work "../../microprocessor/JK_FlipFlop.v"
+verilog work "../../microprocessor/Program_Counter.v"

@@ -1,0 +1,217 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.16 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.16 secs
+ 
+--> Reading design: Program_Counter.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Program_Counter.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Program_Counter"
+Output Format                      : NGC
+Target Device                      : xc3s50an-4-tqg144
+
+---- Source Options
+Top Module Name                    : Program_Counter
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "../../microprocessor/JK_FlipFlop.v" in library work
+Compiling verilog file "../../microprocessor/Program_Counter.v" in library work
+Module <JK_FlipFlop> compiled
+Module <Program_Counter> compiled
+No errors in compilation
+Analysis of file <"Program_Counter.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <Program_Counter> in library <work>.
+
+Analyzing hierarchy for module <JK_FlipFlop> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <Program_Counter>.
+Module <Program_Counter> is correct for synthesis.
+ 
+Analyzing module <JK_FlipFlop> in library <work>.
+Module <JK_FlipFlop> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <JK_FlipFlop>.
+    Related source file is "../../microprocessor/JK_FlipFlop.v".
+    Found 2-bit register for signal <out>.
+    Found 2-bit 4-to-1 multiplexer for signal <out$mux0000> created at line 43.
+    Summary:
+	inferred   2 Multiplexer(s).
+Unit <JK_FlipFlop> synthesized.
+
+
+Synthesizing Unit <Program_Counter>.
+    Related source file is "../../microprocessor/Program_Counter.v".
+WARNING:Xst:647 - Input <input_Q> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:653 - Signal <D> is used but never assigned. This sourceless signal will be automatically connected to value 00000000.
+Unit <Program_Counter> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Registers                                            : 8
+ 2-bit register                                        : 8
+# Multiplexers                                         : 8
+ 2-bit 4-to-1 multiplexer                              : 8
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Registers                                            : 16
+ Flip-Flops                                            : 16
+# Multiplexers                                         : 8
+ 2-bit 4-to-1 multiplexer                              : 8
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1989 - Unit <Program_Counter>: instances <T3>, <T4> of unit <JK_FlipFlop> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <Program_Counter>: instances <T3>, <T6> of unit <JK_FlipFlop> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <Program_Counter>: instances <T3>, <T7> of unit <JK_FlipFlop> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <Program_Counter>: instances <T3>, <T8> of unit <JK_FlipFlop> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <Program_Counter>: instances <T3>, <T10> of unit <JK_FlipFlop> are equivalent, second instance is removed
+
+ERROR:Xst:528 - Multi-source in Unit <Program_Counter> on signal <output_Q<2>>; this signal is connected to multiple drivers.
+Drivers are: 
+   Output signal of FDP instance <T3/out/1>
+   Signal <output_Q<2>> in Unit <Program_Counter> is assigned to GND
+
+ERROR:Xst:528 - Multi-source in Unit <Program_Counter> on signal <output_Q<1>>; this signal is connected to multiple drivers.
+Drivers are: 
+   Output signal of FDP instance <T2/out/1>
+   Signal <output_Q<1>> in Unit <Program_Counter> is assigned to GND
+
+ERROR:Xst:528 - Multi-source in Unit <Program_Counter> on signal <output_Q<0>>; this signal is connected to multiple drivers.
+Drivers are: 
+   Output signal of FDP instance <T1/out/1>
+   Signal <output_Q<0>> in Unit <Program_Counter> is assigned to GND
+
+
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 5.93 secs
+ 
+--> 
+
+Total memory usage is 4497148 kilobytes
+
+Number of errors   :    3 (   0 filtered)
+Number of warnings :    9 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

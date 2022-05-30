@@ -1,0 +1,2 @@
+xst -intstyle ise -ifn "C:/Users/Monday/Downloads/micropro/microprocessor/Mus_RegDst.xst" -ofn "C:/Users/Monday/Downloads/micropro/microprocessor/Mus_RegDst.syr" 
+xst -intstyle ise -ifn "C:/Users/Monday/Downloads/micropro/microprocessor/Mus_RegDst.xst" -ofn "C:/Users/Monday/Downloads/micropro/microprocessor/Mus_RegDst.syr" 
