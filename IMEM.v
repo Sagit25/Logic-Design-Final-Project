@@ -24,6 +24,7 @@ module IMEM(
     );
 	 
 	 wire [7:0] MemByte[31:0];
+	 wire [7:0] ReadAdd;
 	 
 	 assign MemByte[0] = {2'b01, 2'b00, 2'b10, 2'b01};
 	 assign MemByte[1] = {2'b11, 2'b00, 2'b00, 2'b01};
@@ -31,6 +32,9 @@ module IMEM(
 	 assign MemByte[3] = {2'b10, 2'b10, 2'b10, 2'b01};
 	 assign MemByte[4] = {2'b01, 2'b00, 2'b11, 2'b01};
 	 
+	 assign ReadAdd = Read_Address;
 	 assign instruction = MemByte[Read_Address];
-	
+	 
+	 microprocessor T1 (.instruction(instruction), .PCOutput(ReadAdd));
+	 
 endmodule
